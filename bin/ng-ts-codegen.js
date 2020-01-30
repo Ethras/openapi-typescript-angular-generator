@@ -12,7 +12,7 @@ const { exec } = require('child_process');
 const { resolve } = require('path');
 const url = require('url');
 
-const openApiVersion = '3.3.4';
+const openApiVersion = '4.2.2';
 const jarFileName = `openapi-generator-cli-${openApiVersion}.jar`;
 const dockerImageName = `openapitools/openapi-generator-cli:v${openApiVersion}`;
 
@@ -134,7 +134,7 @@ if (argv.a) {
 // additional properties
 const additionalProperties = {
   supportsES6: 'true',
-  ngVersion: '7.0.0',
+  ngVersion: '8.0.0',
   modelPropertyNaming: 'original',
 };
 if (argv['additional-properties']) {
