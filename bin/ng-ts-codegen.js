@@ -135,7 +135,7 @@ if (argv.a) {
 const additionalProperties = {
   supportsES6: 'true',
   ngVersion: '8.0.0',
-  modelPropertyNaming: 'original',
+  // modelPropertyNaming: 'original',
 };
 if (argv['additional-properties']) {
   if (Array.isArray(argv['additional-properties'])) {

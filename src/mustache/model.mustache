@@ -1,6 +1,7 @@
 {{>licenseInfo}}
 {{#models}}
   {{#model}}
+    {{>modelValidatorImports}}
     {{#tsImports}}
       import { {{classname}} } from '{{filename}}';
     {{/tsImports}}
