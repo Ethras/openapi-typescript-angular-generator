@@ -85,6 +85,7 @@ import { Configuration }                                     from '../configurat
   {{/useHttpClient}}
 
   constructor(protected {{#useHttpClient}}httpClient: HttpClient{{/useHttpClient}}{{^useHttpClient}}http: Http{{/useHttpClient}}, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
+  super();
   if (configuration) {
   this.configuration = configuration;
   }
