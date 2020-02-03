@@ -1,20 +1,16 @@
-{{! Copyright(c) 1995 - 2018 T-Systems Multimedia Solutions GmbH }}
-{{! Riesaer Str. 5, 01129 Dresden }}
-{{! All rights reserved. }}
 {{>licenseInfo}}
 {{#models}}
-{{#model}}
-{{>modelValidatorImports}}
-{{#tsImports}}
-import { {{classname}} } from './{{filename}}';
-{{/tsImports}}
+  {{#model}}
+    {{#tsImports}}
+      import { {{classname}} } from '{{filename}}';
+    {{/tsImports}}
 
 
-{{#description}}
-/**
- * {{{description}}}
- */
-{{/description}}
-{{#isEnum}}{{>modelEnum}}{{/isEnum}}{{^isEnum}}{{#isAlias}}{{>modelAlias}}{{/isAlias}}{{^isAlias}}{{#taggedUnions}}{{>modelTaggedUnion}}{{/taggedUnions}}{{^taggedUnions}}{{>modelGeneric}}{{/taggedUnions}}{{/isAlias}}{{/isEnum}}
-{{/model}}
+    {{#description}}
+      /**
+      * {{{description}}}
+      */
+    {{/description}}
+    {{#isEnum}}{{>modelEnum}}{{/isEnum}}{{^isEnum}}{{#isAlias}}{{>modelAlias}}{{/isAlias}}{{^isAlias}}{{#taggedUnions}}{{>modelTaggedUnion}}{{/taggedUnions}}{{^taggedUnions}}{{#oneOf}}{{#-first}}{{>modelOneOf}}{{/-first}}{{/oneOf}}{{^oneOf}}{{>modelGeneric}}{{/oneOf}}{{/taggedUnions}}{{/isAlias}}{{/isEnum}}
+  {{/model}}
 {{/models}}
